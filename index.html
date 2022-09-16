@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="#" type="image/x-icon" />
+    <script src="script.js" defer></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              ghostwhite: '#f8F5F2',
+              softGreen: '#078080',
+              darkBrown: '#232323',
+              strongOrange: '#f45d48',
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="stylesheet" href="style.css" />
+    <title>Trybewarts</title>
+  </head>
+  <body class="bg-softGreen dark:bg-darkBrown">
+    <header class="bg-softGreen py-6 space-y-6 shadow-lg dark:bg-darkBrown">
+      <div
+        class="flex flex-col items-center space-y-6 max-w-xl sm:flex-row md:space-y-0 sm:mx-auto sm:justify-evenly md:justify-between md:my-0"
+      >
+        <img src="./images/trybewarts-header-logo.svg" class="w-28" alt="" />
+        <h1 id="trybewarts-header-title" class="text-4xl text-ghostwhite pb-2">
+          Trybewarts
+        </h1>
+        <div
+          class="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in"
+        >
+          <input
+            type="checkbox"
+            name="toggle"
+            id="toggle"
+            class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 border-green-800 appearance-none cursor-pointer"
+          />
+          <label
+            for="toggle"
+            class="toggle-label block overflow-hidden h-6 rounded-full bg-ghostwhite cursor-pointer"
+          ></label>
+        </div>
+      </div>
+    </header>
+    <main
+      class="bg-ghostwhite justify-center items-center flex flex-col pt-6 min-w-xl px-4 dark:bg-slate-600"
+    >
+      <form id="evaluation-form">
+        <section class="names-div md:flex md:-mb-3 md:gap-1">
+          <input
+            type="text"
+            id="input-name"
+            placeholder="Nome"
+            class="w-full placeholder-darkBrown indent-3 focus:outline-none placeholder-opacity-50 border border-softGreen rounded-md border-opacity-50 py-1 my-2 dark:border-darkBrown"
+          />
+          <input
+            type="text"
+            id="input-lastname"
+            placeholder="Sobrenome"
+            class="w-full placeholder-darkBrown indent-3 focus:outline-none placeholder-opacity-50 border border-softGreen rounded-md border-opacity-50 py-1 my-2 dark:border-darkBrown"
+          />
+        </section>
+        <section
+          class="casas-div flex flex-col space-y-3 md:flex-row md:space-y-0 md:gap-1"
+        >
+          <input
+            type="text"
+            id="input-email"
+            placeholder="Email"
+            class="w-full placeholder-darkBrown indent-3 focus:outline-none placeholder-opacity-50 border border-softGreen rounded-md border-opacity-50 py-1 my-2 dark:border-darkBrown md:w-3/5"
+          />
+
+          <select
+            name="house"
+            id="house"
+            class="w-full md:w-2/5 py-1 indent-1 rounded-md bg-ghostwhite border-softGreen border text-darkBrown my-2 self-center dark:border-darkBrown"
+          >
+            <option value="" id="no-house" selected disabled>
+              Selecione sua casa
+            </option>
+            <option value="Gitnória" id="gitnoria-house">Gitnória</option>
+            <option value="Reactpuff" id="reactpuff-house">Reactpuff</option>
+            <option value="Corvinode" id="corvinode-house">Corvinode</option>
+            <option value="Pytherina" id="pytherina-house">Pytherina</option>
+          </select>
+        </section>
+        <section class="flex flex-col my-2 md:mt-0">
+          <label
+            for="radio-div"
+            id="label-family"
+            class="text-softGreen font-bold my-2 dark:text-ghostwhite"
+            >Qual sua família?</label
+          >
+          <div
+            class="ml-2 text-darkBrown md:space-x-0 md:flex md:justify-around"
+          >
+            <div class="space-x-2">
+              <input
+                type="radio"
+                name="family"
+                id="frontend"
+                value="Frontend"
+              /><label
+                for="frontend"
+                class="dark:text-ghostwhite dark:font-medium"
+                >Frontend</label
+              >
+            </div>
+            <div class="space-x-2">
+              <input
+                type="radio"
+                name="family"
+                id="backend"
+                value="Backend"
+              /><label
+                for="backend"
+                class="dark:text-ghostwhite dark:font-medium"
+                >Backend</label
+              >
+            </div>
+            <div class="space-x-2">
+              <input
+                type="radio"
+                name="family"
+                id="fullstack"
+                value="FullStack"
+              /><label
+                for="fullstack"
+                class="dark:text-ghostwhite dark:font-medium"
+                >FullStack</label
+              >
+            </div>
+          </div>
+        </section>
+        <section class="checkbox-div">
+          <label
+            for="checkbox-div"
+            id="label-content"
+            class="text-softGreen font-bold my-2 dark:text-ghostwhite"
+            >Qual conteúdo você está com mais vontade de aprender?</label
+          >
+          <div class="flex flex-col ml-2 md:ml-12 my-2">
+            <div class="space-x-2 md:space-x-3">
+              <input
+                type="checkbox"
+                name="subject"
+                class="subject"
+                value="HoFs"
+              /><label for="HoFs" class="dark:text-ghostwhite dark:font-medium"
+                >HoFs</label
+              >
+            </div>
+            <div class="space-x-2 md:space-x-3">
+              <input
+                type="checkbox"
+                name="subject"
+                class="subject"
+                value="Jest"
+              /><label for="Jest" class="dark:text-ghostwhite dark:font-medium"
+                >Jest</label
+              >
+            </div>
+            <div class="space-x-2 md:space-x-3">
+              <input
+                type="checkbox"
+                name="subject"
+                class="subject"
+                value="Promises"
+              /><label
+                for="Promises"
+                class="dark:text-ghostwhite dark:font-medium"
+                >Promises</label
+              >
+            </div>
+            <div class="space-x-2 md:space-x-3">
+              <input
+                type="checkbox"
+                name="subject"
+                class="subject"
+                value="React"
+              /><label for="React" class="dark:text-ghostwhite dark:font-medium"
+                >React</label
+              >
+            </div>
+            <div class="space-x-2 md:space-x-3">
+              <input
+                type="checkbox"
+                name="subject"
+                class="subject"
+                value="SQL"
+              /><label for="SQL" class="dark:text-ghostwhite dark:font-medium"
+                >SQL</label
+              >
+            </div>
+            <div class="space-x-2 md:space-x-3">
+              <input
+                type="checkbox"
+                name="subject"
+                class="subject"
+                value="Python"
+              /><label
+                for="Python"
+                class="dark:text-ghostwhite dark:font-medium"
+                >Python</label
+              >
+            </div>
+          </div>
+        </section>
+        <section class="avaliacao-div my-2">
+          <label
+            for="avaliacao-div"
+            id="label-rate"
+            class="text-softGreen font-bold my-2 dark:text-ghostwhite"
+          >
+            Como você avalia a Trybewarts?
+          </label>
+          <div
+            class="flex ml-2 mt-2 space-x-1 sm:justify-evenly md:justify-evenly"
+          >
+            <input type="radio" name="rate" value="1" /><label
+              for="1"
+              class="dark:text-ghostwhite"
+              >1</label
+            >
+            <input type="radio" name="rate" value="2" /><label
+              for="2"
+              class="dark:text-ghostwhite"
+              >2</label
+            >
+            <input type="radio" name="rate" value="3" /><label
+              for="3"
+              class="dark:text-ghostwhite"
+              >3</label
+            >
+            <input type="radio" name="rate" value="4" /><label
+              for="4"
+              class="dark:text-ghostwhite"
+              >4</label
+            >
+            <input type="radio" name="rate" value="5" /><label
+              for="5"
+              class="dark:text-ghostwhite"
+              >5</label
+            >
+            <input type="radio" name="rate" value="6" /><label
+              for="6"
+              class="dark:text-ghostwhite"
+              >6</label
+            >
+            <input type="radio" name="rate" value="7" /><label
+              for="7"
+              class="dark:text-ghostwhite"
+              >7</label
+            >
+            <input type="radio" name="rate" value="8" /><label
+              for="8"
+              class="dark:text-ghostwhite"
+              >8</label
+            >
+            <input type="radio" name="rate" value="9" /><label
+              for="9"
+              class="dark:text-ghostwhite"
+              >9</label
+            >
+            <input type="radio" name="rate" value="10" /><label
+              for="10"
+              class="dark:text-ghostwhite"
+              >10</label
+            >
+          </div>
+        </section>
+        <section class="textarea-div my-2">
+          <label
+            for="textarea"
+            class="text-softGreen font-bold my-2 dark:text-ghostwhite"
+            >Deixe seu comentário:</label
+          >
+          <textarea
+            name="textarea"
+            id="textarea"
+            cols="30"
+            rows="10"
+            maxlength="500"
+            class="w-full p-2 border border-softGreen rounded-md mt-2 dark:border-darkBrown"
+          ></textarea>
+          <p
+            id="counter"
+            class="text-sm text-softGreen opacity-70 dark:text-ghostwhite"
+          ></p>
+        </section>
+        <section class="concorda-div space-x-2 ml-2 my-4 sm:text-center">
+          <input type="checkbox" name="agreement" id="agreement" /><label
+            for="agreement"
+            id="label-infos"
+            class="text-softGreen font-bold my-2 dark:text-ghostwhite"
+            >Você concorda com o uso das informações acima?</label
+          >
+        </section>
+        <button
+          type="submit"
+          id="submit-btn"
+          class="w-full py-2 my-2 mb-4 bg-softGreen rounded-lg shadow-lg hover:opacity-70 transition-all duration-150 text-ghostwhite font-bold dark:bg-darkBrown"
+          disabled
+        >
+          Enviar
+        </button>
+      </form>
+      <section
+        id="form-data"
+        class="hidden flex-col sm:flex-row sm:space-x-8 justify-baseline items-start"
+      >
+        <section class="max-w-xl dark:text-ghostwhite self-center">
+          <p class="font-bold">Nome: <span class="font-normal"></span></p>
+          <p class="font-bold">Email: <span class="font-normal"></span></p>
+          <p class="font-bold">Casa: <span class="font-normal"></span></p>
+          <p class="font-bold">Família: <span class="font-normal"></span></p>
+          <p class="font-bold">Matérias: <span class="font-normal"></span></p>
+          <p class="font-bold">Avaliação: <span class="font-normal"></span></p>
+          <p class="font-bold">
+            Observações: <span class="font-normal"></span>
+          </p>
+        </section>
+        <img
+          src="images/trybewarts-colored.svg"
+          id="trybewarts-forms-logo"
+          class="h-96"
+          alt=""
+        />
+      </section>
+    </main>
+    <footer
+      class="bg-softGreen text-ghostwhite text-center py-2 italic dark:bg-darkBrown"
+    >
+      <h4>Direitos reservados à Trybewarts©</h4>
+    </footer>
+  </body>
+</html>

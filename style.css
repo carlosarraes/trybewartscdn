@@ -1,0 +1,11 @@
+.toggle-checkbox:checked {
+  right: 0;
+  border-color: #0c0c0c;
+}
+.toggle-checkbox:checked + .toggle-label {
+  background-color: rgb(71, 85, 105);
+}
+
+.obs {
+  overflow-wrap: break-word;
+}
